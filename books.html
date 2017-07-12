@@ -9,14 +9,14 @@
   <title>Galvanize Reads</title>
 </head>
 
-<body class="books-list">
-  <nav>
+<body class="grey books-list">
+  <nav class="grey darken-2">
     <div class="nav-wrapper">
       <img height="50px" width="50px" class="logo-image responsive-img circle" src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAmAAAAAJDUxMmU4ZmE0LWVmZGMtNDdlNS1hYmNkLTA5MTNmYWI0ZjgxMw.png" alt="Galvanize Logo">
-      <a href="#" class="brand-logo">Galvanize Reads</a>
+      <a href="index.html" class="brand-logo">Galvanize Reads</a>
     </div>
   </nav>
-  <a class="waves-effect waves-light btn" href="#add-book">Add a Book</a>
+  <a class="orange waves-effect waves-light btn" href="#add-book">Add a Book</a>
 
 
   <div id="add-book" class="modal">
@@ -26,14 +26,14 @@
         <input class="add-book-image-url" type="text" placeholder="Book Image URL">
         <input class="add-book-genre" type="text" placeholder="Genre">
         <textarea class="add-book-description" rows="4" cols="50">Book Description</textarea>
-        <button class="btn right" type="submit">Add Book!</button>
+        <button class="orange btn right" type="submit">Add Book!</button>
       </form>
     </div>
   </div>
   <main class="row books-display"></main>
   <script id="books-template" type="text/x-handlebars-template">
     {{#each books}}
-    <section class="col s1 m4">
+    <section class="col s12 m4">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <img class="activator image-fit" src="{{cover_url}}">
@@ -45,7 +45,7 @@
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">{{title}}<i class="material-icons right">close</i></span>
           <p>{{description}}</p>
-          <button data-id="{{id}}" class="btn remove-button">Remove</button>
+          <button data-id="{{id}}" class="btn orange remove-button">Remove</button>
         </div>
       </div>
 
