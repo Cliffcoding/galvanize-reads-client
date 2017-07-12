@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Galvanize Reads</title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <img height="50px" width="50px" class="logo-image responsive-img circle" src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAmAAAAAJDUxMmU4ZmE0LWVmZGMtNDdlNS1hYmNkLTA5MTNmYWI0ZjgxMw.png" alt="Galvanize Logo">
+      <a href="#" class="brand-logo">Galvanize Reads</a>
+    </div>
+  </nav>
+  <a class="waves-effect waves-light btn" href="#add-book">Add a Book</a>
+
+
+  <div id="add-book" class="modal">
+    <div class="modal-content">
+      <form class="book-submit">
+        <input class="add-book-title" type="text" placeholder="Book Title">
+        <input class="add-book-image-url" type="text" placeholder="Book Image URL">
+        <input class="add-book-genre" type="text" placeholder="Genre">
+        <textarea class="add-book-description" rows="4" cols="50">Book Description</textarea>
+        <button class="btn right" type="submit">Add Book!</button>
+      </form>
+    </div>
+  </div>
+  <main class="row books-display"></main>
+  <script id="books-template" type="text/x-handlebars-template">
+    {{#each books}}
+    <section class="col s1 m4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator image-fit" src="{{cover_url}}">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{title}}<i class="material-icons right">more_vert</i></span>
+          <p>{{genre}}</p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{title}}<i class="material-icons right">close</i></span>
+          <p>{{description}}</p>
+        </div>
+      </div>
+
+    </section>
+    {{/each}}
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  <script src="./scripts/books.js" charset="utf-8"></script>
+</body>
+
+</html>
