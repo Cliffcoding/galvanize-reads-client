@@ -9,7 +9,7 @@
   <title>Galvanize Reads</title>
 </head>
 
-<body>
+<body class="books-list">
   <nav>
     <div class="nav-wrapper">
       <img height="50px" width="50px" class="logo-image responsive-img circle" src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAmAAAAAJDUxMmU4ZmE0LWVmZGMtNDdlNS1hYmNkLTA5MTNmYWI0ZjgxMw.png" alt="Galvanize Logo">
@@ -45,6 +45,7 @@
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">{{title}}<i class="material-icons right">close</i></span>
           <p>{{description}}</p>
+          <button data-id="{{id}}" class="btn remove-button">Remove</button>
         </div>
       </div>
 

@@ -1,9 +1,12 @@
 .image-fit {
-  height: 60vh;
+  height: 70vh;
   width: 100%;
 }
 .main-page {
   margin-top: 10vh;
+}
+.delete-button {
+  width: 70vw;
 }
 /*.logo-image {
   margin-top: 1%;
