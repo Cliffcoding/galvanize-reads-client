@@ -26,6 +26,11 @@
         <input class="add-book-image-url" type="text" placeholder="Book Image URL">
         <input class="add-book-genre" type="text" placeholder="Genre">
         <textarea class="add-book-description" rows="4" cols="50">Book Description</textarea>
+        <div class="input-field">
+          <select multiple>
+            <option class="selected disabled">Choose an author</option>
+          </select>
+        </div>
         <button class="orange btn right" type="submit">Add Book!</button>
       </form>
     </div>
@@ -44,8 +49,12 @@
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">{{title}}<i class="material-icons right">close</i></span>
+          {{#each authors}}
+          <p>{{first_name}} {{last_name}}</px>
+          {{/each}}
           <p>{{description}}</p>
           <button data-id="{{id}}" class="btn orange remove-button">Remove</button>
+          <button data-id="{{id}}" class="btn orange edit-button">Edit</button>
         </div>
       </div>
 

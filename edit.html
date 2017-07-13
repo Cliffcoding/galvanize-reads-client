@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Galvanize Reads</title>
+</head>
+
+<body class="edit-book grey lighten-2">
+  <nav>
+    <div class="grey darken-2 nav-wrapper">
+      <img height="50px" width="50px" class="logo-image responsive-img circle" src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAmAAAAAJDUxMmU4ZmE0LWVmZGMtNDdlNS1hYmNkLTA5MTNmYWI0ZjgxMw.png" alt="Galvanize Logo">
+      <a href="index.html" class="brand-logo">Galvanize Reads</a>
+    </div>
+  </nav>
+  <main class="container ">
+    <h1>Edit Book</h1>
+    <section class="edit-display z-depth-3 grey lighten-3">
+    </section>
+  </main>
+  <script id="edit-book-template" type="text/x-handlebars-template">
+    <form data-id="{{book.id}}" class="edit-form">
+      <label for="book-title">Book Title</label>
+      <input class="book-title" type="text" value="{{book.title}}">
+      <label for="book-image">Book Image URL</label>
+      <input class="book-image" type="text" value="{{book.cover_url}}">
+      <label for="book-genre">Book Genre</label>
+      <input class="book-genre" type="text" value="{{book.genre}}">
+      <label for="book-description">Book Description</label>
+      <textarea class="book-description" rows="10" cols="70">{{book.description}}</textarea>
+      <button class="orange btn finish-edit-button">Finish Editing</button>
+    </form>
+
+
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  <script src="./scripts/edit.js" charset="utf-8"></script>
+</body>
+
+</html>

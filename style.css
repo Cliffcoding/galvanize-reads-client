@@ -11,3 +11,9 @@
 .logo-image {
   margin-top: 3px;
 }
+.edit-form {
+  margin: auto 10%;
+}
+.finish-edit-button {
+  width: 100%;
+}

@@ -1,16 +1,18 @@
 $(appready)
 
-let BASE_URL = (window.location.hostname == "localhost") ? `http://localhost:3000/api/v1`: `https://jason-g-reads-db.herokuapp.com/api/v1`;
+let BASE_URL = (window.location.host == "127.0.0.1:8080") ? `http://localhost:3000/api/v1` : `https://jason-g-reads-db.herokuapp.com/api/v1`;
 
 function appready() {
+  $('select').material_select();
   $('.modal').modal();
   addBooks();
-  removeClick();
+  removeButton();
+  editButton()
   getBooks();
 
 }
 
-function removeClick() {
+function removeButton() {
   $('main').on('click', '.remove-button', function(event) {
     let id = $(this).attr('data-id')
     event.preventDefault();
@@ -18,9 +20,18 @@ function removeClick() {
   })
 }
 
+function editButton() {
+  $('main').on('click', '.edit-button', function(event) {
+    let id = $(this).attr('data-id')
+    event.preventDefault();
+    window.location = `/edit.html?id=${id}`
+  })
+}
+
 function getBooks() {
   $.get(`${BASE_URL}/books`)
     .then(books => {
+      console.log(books[0].authors);
       displayBooks(books);
     })
 }
@@ -39,7 +50,8 @@ function addBooks() {
     event.preventDefault();
     const newBookInfo = getAddedBookInfo();
     $.post(`${BASE_URL}/books/new`, newBookInfo).then(results => {
-      window.location = books.html;
+      console.log('added!');
+      window.location.href = 'books.html';
     })
   })
 }
